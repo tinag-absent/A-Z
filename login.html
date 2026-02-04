@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>機関員アクセス - 海蝕機関</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="./images/logo.png" alt="Logo" class="sidebar-logo">
+        <div>
+          <div class="sidebar-title">海蝕機関</div>
+          <div class="sidebar-subtitle">KAISHOKU AGENCY</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="./index.html" class="nav-item">
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <span>ステータス・ダッシュボード</span>
+        </a>
+        <a href="./divisions.html" class="nav-item">
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <span>各部門情報</span>
+        </a>
+        <a href="./phenomenon.html" class="nav-item">
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+          </svg>
+          <span>アーカイブ：海蝕現象</span>
+        </a>
+        <a href="./login.html" class="nav-item active">
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <span>機関員アクセス</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-panel">
+          <div class="status-row">
+            <span class="status-label">権限レベル:</span>
+            <span class="status-value status-critical">LEVEL 0</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">ステータス:</span>
+            <span class="status-value status-active">監視中</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">次元座標:</span>
+            <span class="status-value">PRIME</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content scanline">
+      <div class="container">
+        <div style="display: flex; align-items: center; justify-content: center; min-height: 70vh;">
+          
+          <div class="card" style="width: 100%; max-width: 28rem; background-color: rgba(0, 0, 0, 0.6); border-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
+            
+            <!-- Header -->
+            <div class="card-header text-center space-y-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 1.5rem;">
+              <div style="margin: 0 auto 1rem; width: 3rem; height: 3rem; background-color: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <svg width="24" height="24" fill="none" stroke="var(--primary)" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+              </div>
+              <h2 class="glitch-text" style="font-size: 1.5rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.1em; color: white;">
+                機関員認証
+              </h2>
+              <p class="font-mono" style="font-size: 0.75rem; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.1em;">
+                関係者以外立入禁止
+              </p>
+            </div>
+
+            <!-- Form -->
+            <div class="card-content" style="padding-top: 2rem;">
+              <form id="loginForm" class="space-y-4">
+                <div class="form-group">
+                  <label class="form-label font-mono" style="font-size: 0.75rem; color: rgba(0, 255, 255, 0.8); text-transform: uppercase;">
+                    機関員ID
+                  </label>
+                  <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="K-000-000"
+                    style="background-color: rgba(255, 255, 255, 0.05);"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label font-mono" style="font-size: 0.75rem; color: rgba(0, 255, 255, 0.8); text-transform: uppercase;">
+                    パスキー
+                  </label>
+                  <input 
+                    type="password" 
+                    class="form-input" 
+                    placeholder="••••••••••••"
+                    style="background-color: rgba(255, 255, 255, 0.05);"
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  class="btn btn-primary" 
+                  style="width: 100%; margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;"
+                  id="loginButton"
+                >
+                  <span id="buttonText">認証を実行</span>
+                  <svg id="loadingSpinner" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none; animation: spin 1s linear infinite;">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"/>
+                    <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" opacity="0.75"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-content text-center" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; padding-bottom: 1rem;">
+              <p class="font-mono" style="font-size: 0.625rem; color: rgba(156, 163, 175, 0.5); max-width: 12.5rem; margin: 0 auto; line-height: 1.3;">
+                警告：未認可のアクセスは海蝕プロトコルに基づき、クラス4の重罪とみなされます。
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" style="position: fixed; bottom: 2rem; right: 2rem; background-color: rgba(127, 29, 29, 0.9); border: 1px solid var(--destructive); padding: 1rem 1.5rem; max-width: 20rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; backdrop-filter: blur(10px); z-index: 9999;">
+    <div style="font-weight: 600; color: white; margin-bottom: 0.25rem;">ACCESS DENIED</div>
+    <div style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">Invalid credentials. This attempt has been logged.</div>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script>
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const button = document.getElementById('loginButton');
+      const buttonText = document.getElementById('buttonText');
+      const spinner = document.getElementById('loadingSpinner');
+      const toast = document.getElementById('toast');
+      
+      // Show loading state
+      button.disabled = true;
+      buttonText.style.display = 'none';
+      spinner.style.display = 'block';
+      
+      // Simulate login delay
+      setTimeout(function() {
+        // Reset button
+        button.disabled = false;
+        buttonText.style.display = 'inline';
+        spinner.style.display = 'none';
+        
+        // Show toast
+        toast.style.opacity = '1';
+        toast.style.pointerEvents = 'auto';
+        
+        // Hide toast after 3 seconds
+        setTimeout(function() {
+          toast.style.opacity = '0';
+          toast.style.pointerEvents = 'none';
+        }, 3000);
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
