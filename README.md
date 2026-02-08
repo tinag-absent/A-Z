@@ -22,8 +22,13 @@
 ├── mission-detail.html # 案件詳細ページ（LEVEL 2必要）
 ├── modules.html        # モジュールカタログ（LEVEL 2必要）
 ├── entities.html       # 海蝕実体カタログ（LEVEL 3必要）
+├── classified.html     # 機関員個人情報データベース（LEVEL 5必要）
+├── personnel-detail.html # 機関員詳細ページ（LEVEL 5必要）
 ├── css/
-│   └── style.css       # メインスタイルシート
+│   ├── style.css       # メインスタイルシート
+│   ├── catalog.css     # カタログ用CSS
+│   ├── classified.css  # 機密情報用CSS
+│   └── personnel-detail.css # 機関員詳細用CSS
 ├── js/
 │   ├── main.js         # メインJavaScript
 │   ├── chat.js         # チャット機能JavaScript
@@ -36,7 +41,10 @@
 │   ├── map.js          # マップ表示・インタラクションJavaScript
 │   ├── mission-data.js # 収束案件データベース
 │   ├── missions-search.js # 案件検索JavaScript
-│   └── mission-detail.js # 案件詳細JavaScript
+│   ├── mission-detail.js # 案件詳細JavaScript
+│   ├── personnel-database.js # 機関員データベース
+│   ├── classified.js   # 機密情報ページJavaScript
+│   └── personnel-detail.js # 機関員詳細JavaScript
 └── images/             # 画像ファイル
     ├── logo.png
     ├── bg-texture.png
@@ -96,7 +104,7 @@
 - LEVEL 2: 各部門の詳細情報、モジュールカタログ、収束案件データベース
 - LEVEL 3: 海蝕現象アーカイブ、海蝕実体カタログ
 - LEVEL 4: 高度機密案件（一部案件の詳細情報）
-- LEVEL 5: 最高機密情報（未実装）
+- LEVEL 5: 機密情報アーカイブ（機関員履歴書・私的日記）
 
 ## 機能
 
@@ -147,6 +155,22 @@
     - 人員情報・死傷者数
     - 任務結果（収束済み案件）
   - セキュリティレベルによるアクセス制御
+- **機密情報アーカイブ** - LEVEL 5でアンロック:
+  - **機関員履歴書**:
+    - 8名の機関員の詳細プロフィール
+    - 個人情報（年齢、生年月日、血液型）
+    - 学歴・専門分野
+    - 任務実績（任務数、成功率、表彰回数）
+    - 心理プロファイル
+    - 機密メモ
+  - **私的日記**:
+    - 12件の機関員の個人日記
+    - 日付・著者・気分タグ
+    - 業務の悩み、家族への想い、使命感
+    - 検索機能（著者名、内容、タグ）
+  - タブ切替で履歴書/日記を切り替え
+  - 詳細モーダル表示
+  - 最高機密レベルのコンテンツ
 - **チャット機能**:
   - 登録済み機関員とのリアルタイムチャット
   - タブ切り替えで複数人と会話可能
